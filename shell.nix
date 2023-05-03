@@ -11,6 +11,7 @@ let
     nixpkgs-fmt
     fswatch
     gcc
+    ack
   ];
 
   inputs = basePackages ++ lib.optionals stdenv.isLinux [ inotify-tools ]
