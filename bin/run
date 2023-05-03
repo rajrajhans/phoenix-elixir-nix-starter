@@ -121,6 +121,10 @@ run_lint.all() {
   mix dialyzer
 }
 
+run_clean.phx(){
+  rm -rf mix.exs mix.lock lib deps config assets _build test .formatter.exs priv
+}
+
 fn_exists() { declare -F "$1" >/dev/null; }
 
 run() {
