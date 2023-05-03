@@ -1,0 +1,21 @@
+#nix
+.direnv/
+.nix-hex/
+.nix-mix/
+
+# vscode
+.vscode/*
+!.vscode/tasks.json
+!.vscode/extensions.json
+.elixir_ls/
+
+# Local environment variable files
+.env.local
+.env.*.local
+
+# macos
+.DS_Store
+
+# intellij
+.idea
+iv_pro_copilot.iml
