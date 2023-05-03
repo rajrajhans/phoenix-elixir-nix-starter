@@ -1,6 +1,8 @@
 # Phoenix Nix Starter
 
-- todo: document
+The idea is to have a ready to go phoenix project setup with Nix, along with all the bells and whistles (`run` commands for common workflows, multi env config, etc.)
+
+The existing phoenix project is generated using `mix phx.new` with Phoenix 1.7.2, but it is easy (execute `run clean.phx`) to rip out all the phoenix related files and start from scratch with a new `mix phx.new` command as needed.
 
 ### Todos
 
