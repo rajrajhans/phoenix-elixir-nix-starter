@@ -10,10 +10,24 @@ The existing phoenix project is generated using `mix phx.new` with Phoenix 1.7.2
 - Credo and Dialyzer setup
 - ElixirLS setup for VSCode
 - Dockerfile setup (Easy deployment to Fly.io)
-- Multi env config
+- Multi env support (using [shdotenv](https://github.com/ko1nksm/shdotenv))
 - `run` commands for common workflows
-- Github Actions setup for running tests (with nix cache support)
+- Github Actions setup for
+  - running tests (with nix cache support)
+  - deploying to fly.io
 - Setup for spawning an IEX shell on production server
+
+## Setting Up
+
+- Installing nix and direnv is required.
+- Clone this repo and `cd` into it.
+- Execute `run init` in the terminal.
+- Execute `help` in the terminal to see the available commands.
+- Execute `run deps` in the terminal to install dependencies.
+
+## Clean Existing Phoenix Project
+
+- Execute `run clean.phx` in the terminal to remove all phoenix related files.
 
 ### Todos
 
