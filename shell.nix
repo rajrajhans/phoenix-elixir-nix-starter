@@ -35,9 +35,6 @@ let
 
     export PATH=bin:$PATH
     export MIX_ENV=dev
-
-    # install hex and phx_new
-    mix archive.install hex phx_new --force
   '';
 
 in
