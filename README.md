@@ -1,6 +1,6 @@
 # Phoenix Nix Starter
 
-The idea is to have a ready to go phoenix project setup with Nix, along with all the bells and whistles (`run` commands for common workflows, multi env config, etc.)
+The idea is to have a ready to go phoenix project setup with Nix, along with some extra bells and whistles (see [Features](#features)).
 
 The existing phoenix project is generated using `mix phx.new` with Phoenix 1.7.2, but it is easy (execute `run clean.phx`) to rip out all the phoenix related files and start from scratch with a new `mix phx.new` command as needed.
 
@@ -8,7 +8,6 @@ The existing phoenix project is generated using `mix phx.new` with Phoenix 1.7.2
 
 - Nix setup
 - Credo and Dialyzer setup
-- ElixirLS setup for VSCode
 - Dockerfile setup (Easy deployment to Fly.io)
 - Multi env support (using [shdotenv](https://github.com/ko1nksm/shdotenv))
 - `run` commands for common workflows
@@ -16,6 +15,7 @@ The existing phoenix project is generated using `mix phx.new` with Phoenix 1.7.2
   - running tests (with nix cache support)
   - deploying to fly.io
 - Setup for spawning an IEX shell on production server
+- VSCode Tasks for running tests.
 
 ## Setting Up
 
