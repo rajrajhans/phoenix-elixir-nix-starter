@@ -121,7 +121,12 @@ run_lint.all() {
   mix dialyzer
 }
 
-run_clean.phx(){
+run_clean() {
+  mix clean --deps
+  rm -rf .elixir_ls/
+}
+
+run_delete.phx(){
   rm -rf mix.exs mix.lock lib deps config assets _build test .formatter.exs priv
 }
 

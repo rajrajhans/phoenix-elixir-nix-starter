@@ -83,3 +83,11 @@ echo -e "\n"
 printf "${CYAN}%-35s${NC}" "run lint"
 printf "%s" "Lint project files"
 echo -e "\n"
+
+printf "${CYAN}%-35s${NC}" "run clean"
+printf "%s" "Remove all Phoenix framework related files"
+echo -e "\n"
+
+printf "${CYAN}%-35s${NC}" "run delete.phx"
+printf "%s" "Remove all Phoenix framework related files"
+echo -e "\n"

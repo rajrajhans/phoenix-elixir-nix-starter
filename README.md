@@ -2,7 +2,7 @@
 
 The idea is to have a ready to go phoenix project setup with Nix, along with some extra bells and whistles (see [Features](#features)).
 
-The existing phoenix project is generated using `mix phx.new` with Phoenix 1.7.2, but it is easy (execute `run clean.phx`) to rip out all the phoenix related files and start from scratch with a new `mix phx.new` command as needed.
+The existing phoenix project is generated using `mix phx.new` with Phoenix 1.7.2, but it is easy (execute `run delete.phx`) to rip out all the phoenix related files and start from scratch with a new `mix phx.new` command as needed.
 
 ## Features Todo
 
@@ -27,13 +27,35 @@ The existing phoenix project is generated using `mix phx.new` with Phoenix 1.7.2
 
 ## Clean Existing Phoenix Project
 
-- Execute `run clean.phx` in the terminal to remove all phoenix related files.
+- If you want to generate your own phoenix project instead of using the existing one, you can do so by executing `run delete.phx` in the terminal.
+- This will remove all the phoenix related files and directories, and you can generate your own phoenix project using [`mix phx.new`](https://hexdocs.pm/phoenix/Mix.Tasks.Phx.New.html).
+
+## List of available commands
+
+Following info can also be found by executing `help` in the terminal
+
+`help` Show help message with available commands
+`run [command]` Run any command with dev env loaded
+`run deps` Install dependencies
+`run dev.reset` Reset dev database
+`run db.setup` Setup local db
+`run db.migrate` Migrate local db
+`run db.rollback` Rollback local db
+`run db.create_migration <name>` Create new migration script
+`run server` Run the server inside an IEx shell
+`run test.reset` Reset test database
+`run test` Run tests
+`run test.watch` Run test in watch mode
+`run test.cover` Show test coverage
+`run format` Format project files
+`run lint` Lint project files
+`run delete.phx` Remove all Phoenix framework related files
+`run clean` Removes dependencies, build files, and ElixirLS files
 
 ### Todos
 
 - move to nix flakes
 - run commands to be added
-  - `run clean.phx` which will remove all phoenix related files. useful when theres a need to run `mix phx.new` from scratch (e.g. newer phoenix versions)
   - `run clean` which will clean dependencies, etc.
   - `run deps` which will install dependencies
   - `run test` which will run tests
