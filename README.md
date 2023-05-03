@@ -12,7 +12,8 @@ The existing phoenix project is generated using `mix phx.new` with Phoenix 1.7.2
 - Multi env support (using [shdotenv](https://github.com/ko1nksm/shdotenv))
 - `run` commands for common workflows
 - Github Actions setup for
-  - running tests (with nix cache support)
+  - running build & tests in CI (with nix cache & postgres support)
+  - running lint (credo) and dialyzer in CI
   - deploying to fly.io
 - Setup for spawning an IEX shell on production server
 - VSCode Tasks for running tests.
@@ -29,7 +30,7 @@ The existing phoenix project is generated using `mix phx.new` with Phoenix 1.7.2
 
 - If you want to generate your own phoenix project instead of using the existing one, you can do so by executing `run delete.phx` in the terminal.
 - This will remove all the phoenix related files and directories, and you can generate your own phoenix project using [`mix phx.new`](https://hexdocs.pm/phoenix/Mix.Tasks.Phx.New.html).
-- Note that this will also remove `credo` and `dialyzer` from deps. To add it back, just add the following in `deps` of `mix.exs`:
+- Note that this will also remove `credo` and `dialyxir` from deps. To add it back, just add the following in `deps` of `mix.exs`:
 
 ```elixir
       # Linting
