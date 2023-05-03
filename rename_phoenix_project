@@ -11,11 +11,11 @@ NEW_OTP="new_name"
 
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
-  ack -l $CURRENT_NAME --ignore-file=is:rename_phoenix_project | xargs sed -i '' -e "s/$CURRENT_NAME/$NEW_NAME/g"
-  ack -l $CURRENT_OTP --ignore-file=is:rename_phoenix_project | xargs sed -i '' -e "s/$CURRENT_OTP/$NEW_OTP/g"
-else
   ack -l $CURRENT_NAME --ignore-file=is:rename_phoenix_project | xargs sed -i -e "s/$CURRENT_NAME/$NEW_NAME/g"
   ack -l $CURRENT_OTP --ignore-file=is:rename_phoenix_project | xargs sed -i -e "s/$CURRENT_OTP/$NEW_OTP/g"
+else
+  ack -l $CURRENT_NAME --ignore-file=is:rename_phoenix_project | xargs sed -i '' -e "s/$CURRENT_NAME/$NEW_NAME/g"
+  ack -l $CURRENT_OTP --ignore-file=is:rename_phoenix_project | xargs sed -i '' -e "s/$CURRENT_OTP/$NEW_OTP/g"
 fi
 
 git mv lib/$CURRENT_OTP lib/$NEW_OTP
