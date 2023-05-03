@@ -25,8 +25,15 @@ The existing phoenix project is generated using `mix phx.new` with Phoenix 1.7.2
 - Execute `run init` in the terminal.
 - Execute `help` in the terminal to see the available commands.
 - Execute `run deps` in the terminal to install dependencies.
+- To customize this for your Phoenix project, you have two options:
+  1. Rename and use the existing Phoenix project (Phoenix 1.7.2)
+  2. Remove existing Phoenix project, and generate a new one
 
-## Clean Existing Phoenix Project
+### 1. Rename and use the existing Phoenix project
+
+- Execute `run rename.phx --module NewModule --app NewApp` which will rename the phoenix project and OTP application.
+
+### 2. Remove existing Phoenix project, and generate a new one
 
 - If you want to generate your own phoenix project instead of using the existing one, you can do so by executing `run delete.phx` in the terminal.
 - This will remove all the phoenix related files and directories, and you can generate your own phoenix project using [`mix phx.new`](https://hexdocs.pm/phoenix/Mix.Tasks.Phx.New.html).
@@ -65,8 +72,4 @@ Following info can also be found by executing `help` in the terminal
 
 - move to nix flakes
 - run commands to be added
-  - `run clean` which will clean dependencies, etc.
-  - `run deps` which will install dependencies
-  - `run test` which will run tests
   - `run deploy` which will deploy to fly.io
-  - `run rename.phx --module NewModule --app NewApp` which will rename the phoenix project and OTP application.
