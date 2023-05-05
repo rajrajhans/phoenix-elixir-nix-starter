@@ -30,6 +30,8 @@ let
     export MIX_PATH="${beam.packages.erlangR25.hex}/lib/erlang/lib/hex/ebin"
     export PATH=$MIX_HOME/bin:$HEX_HOME/bin:$PATH
     export LANG=C.UTF-8
+    export LC_CTYPE=en_US.UTF-8
+    export LC_ALL=en_US.UTF-8
 
     # keep your shell history in iex
     export ERL_AFLAGS="-kernel shell_history enabled"
