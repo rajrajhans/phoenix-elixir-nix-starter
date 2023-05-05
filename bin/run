@@ -130,6 +130,13 @@ run_delete.phx(){
   rm -rf mix.exs mix.lock lib deps config assets _build test .formatter.exs priv
 }
 
+run_release() {
+  mix local.rebar --force
+  mix local.hex --force
+  mix deps.get
+  mix deps.compile
+}
+
 fn_exists() { declare -F "$1" >/dev/null; }
 
 run() {
