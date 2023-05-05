@@ -2,6 +2,9 @@
 
 set -e
 
+CURRENT_NAME=PhoenixStarter
+CURRENT_OTP=phoenix_starter
+
 for ARGUMENT in "$@"
 do
    KEY=$(echo $ARGUMENT | cut -f1 -d=)
@@ -19,10 +22,11 @@ check_empty_variable() {
   fi
 }
 
-check_empty_variable "$CURRENT_NAME" "CURRENT_NAME"
-check_empty_variable "$CURRENT_OTP" "CURRENT_OTP"
-check_empty_variable "$NEW_NAME" "NEW_NAME"
-check_empty_variable "$NEW_OTP" "NEW_OTP"
+check_empty_variable "$MODULE" "MODULE"
+check_empty_variable "$APP" "APP"
+
+NEW_NAME=$MODULE
+NEW_OTP=$APP
 
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
