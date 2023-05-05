@@ -11,6 +11,7 @@ let
     nixpkgs-fmt
     fswatch
     gcc
+    ack
   ];
 
   inputs = basePackages ++ lib.optionals stdenv.isLinux [ inotify-tools ]
@@ -29,15 +30,14 @@ let
     export MIX_PATH="${beam.packages.erlangR25.hex}/lib/erlang/lib/hex/ebin"
     export PATH=$MIX_HOME/bin:$HEX_HOME/bin:$PATH
     export LANG=C.UTF-8
+    export LC_CTYPE=en_US.UTF-8
+    export LC_ALL=en_US.UTF-8
 
     # keep your shell history in iex
     export ERL_AFLAGS="-kernel shell_history enabled"
 
     export PATH=bin:$PATH
     export MIX_ENV=dev
-
-    # install hex and phx_new
-    mix archive.install hex phx_new --force
   '';
 
 in

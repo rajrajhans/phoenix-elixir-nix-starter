@@ -56,3 +56,8 @@ npm-debug.log
 # intellij
 .idea
 iv_pro_copilot.iml
+
+# dialyzer
+
+priv/plts/_.plt
+priv/plts/_.plt.hash
