@@ -31,7 +31,7 @@ The existing phoenix project is generated using `mix phx.new` with Phoenix 1.7.2
 
 ### 1. Rename and use the existing Phoenix project
 
-- Execute `run rename.phx --module NewModule --app NewApp` which will rename the phoenix project and OTP application.
+- Execute `rename_phoenix_project MODULE=NewName APP=new_otp` which will rename the phoenix project and OTP application to `NewName` and `new_otp` respectively.
 
 ### 2. Remove existing Phoenix project, and generate a new one
 
