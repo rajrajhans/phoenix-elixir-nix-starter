@@ -14,7 +14,7 @@ The existing phoenix project is generated using `mix phx.new` with Phoenix 1.7.2
 - Github Actions setup for
   - running build & tests in CI (with nix cache & postgres support)
   - running lint (credo) and dialyzer in CI
-  - deploying to fly.io
+  - deploying to fly.io (currently setup to deploy on manual trigger)
 - Setup for spawning an IEX shell on production server
 - VSCode Tasks for running tests.
 
