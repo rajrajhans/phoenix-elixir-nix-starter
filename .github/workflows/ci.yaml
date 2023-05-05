@@ -151,7 +151,7 @@ jobs:
       - name: Run Tests
         run: |
           export SECRET_KEY_BASE=$(nix-shell shell.nix --run 'mix phx.gen.secret' | tail -1)
-          echo $DATABASE_URL
+          echo db_url from env: $DATABASE_URL
           nix-shell shell.nix --run 'run test.migration'
           nix-shell shell.nix --run 'run test.ci'
         env:
