@@ -131,7 +131,7 @@ run_delete.phx(){
 }
 
 run_release() {
-  echo "Doing run release..."
+  echo "Executing run_release..."
   mix local.rebar --force
   mix local.hex --force
   mix deps.get
