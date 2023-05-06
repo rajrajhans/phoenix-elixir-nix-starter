@@ -152,8 +152,8 @@ jobs:
       - name: Run Tests
         run: |
           export SECRET_KEY_BASE=$(nix-shell shell.nix --run 'mix phx.gen.secret' | tail -1)
-          echo db_url from env: $DATABASE_URL
           nix-shell shell.nix --run 'run test.migration'
           nix-shell shell.nix --run 'run test.ci'
         env:
           DATABASE_URL: postgresql://postgres:postgres@localhost:${{job.services.postgres.ports[5432]}}/phoenix_starter_test
+          MIX_ENV: test
