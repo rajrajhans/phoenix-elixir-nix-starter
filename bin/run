@@ -98,6 +98,9 @@ run_test.ci() {
 }
 
 run_test.migration() {
+  mix local.rebar --force
+  mix local.hex --force
+
   with_test_env
 
   mix ecto.create && mix ecto.migrate && mix ecto.rollback --all
