@@ -4,18 +4,16 @@ The idea is to have a ready to go phoenix project setup with Nix, along with som
 
 The existing phoenix project is generated using `mix phx.new` with Phoenix 1.7.2, but it is easy (execute `run delete.phx`) to rip out all the phoenix related files and start from scratch with a new `mix phx.new` command as needed.
 
-## Features Todo
+## Features
 
 - Nix setup
 - Credo and Dialyzer setup
-- Dockerfile setup (Easy deployment to Fly.io)
 - Multi env support (using [shdotenv](https://github.com/ko1nksm/shdotenv))
 - `run` commands for common workflows
 - Github Actions setup for
   - running build & tests in CI (with nix cache & postgres support)
   - running lint (credo) and dialyzer in CI
   - deploying to fly.io (currently setup to deploy on manual trigger)
-- Setup for spawning an IEX shell on production server
 - VSCode Tasks for running tests.
 
 ## Setting Up
@@ -73,3 +71,5 @@ Following info can also be found by executing `help` in the terminal
 - move to nix flakes
 - run commands to be added
   - `run deploy` which will deploy to fly.io
+  - document lint setup, and remaining `run` commands.
+- Setup for spawning an IEX shell on production server
