@@ -20,7 +20,7 @@ The existing phoenix project is generated using `mix phx.new` with Phoenix 1.7.2
 
 - Installing nix and direnv is required.
 - Clone this repo and `cd` into it.
-- Execute `run init` in the terminal.
+- Execute `direnv allow` in the terminal.
 - Execute `help` in the terminal to see the available commands.
 - Execute `run deps` in the terminal to install dependencies.
 - To customize this for your Phoenix project, you have two options:
