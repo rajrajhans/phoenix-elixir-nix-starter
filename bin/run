@@ -123,7 +123,7 @@ run_lint.all() {
 
 run_clean() {
   mix clean --deps
-  rm -rf .elixir_ls/
+  rm -rf .elixir_ls/ _build/
 }
 
 run_delete.phx(){
