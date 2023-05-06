@@ -145,7 +145,6 @@ jobs:
           key: my-random-cache-key-1234-${{ runner.os }}-${{ steps.hex-info.outputs.otp-version }}-${{ steps.hex-info.outputs.elixir-version }}-${{ hashFiles(format('{0}{1}', github.workspace, '/mix.lock')) }}
 
       - name: Install Mix Dependencies
-        if: steps.mix-cache.outputs.cache-hit != 'true'
         run: |
           nix-shell shell.nix --run 'run release'
 
