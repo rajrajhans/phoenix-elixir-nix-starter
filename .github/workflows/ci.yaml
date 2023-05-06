@@ -156,4 +156,3 @@ jobs:
           nix-shell shell.nix --run 'run test.ci'
         env:
           DATABASE_URL: postgresql://postgres:postgres@localhost:${{job.services.postgres.ports[5432]}}/phoenix_starter_test
-          MIX_ENV: test
