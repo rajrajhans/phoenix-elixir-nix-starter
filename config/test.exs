@@ -7,8 +7,6 @@ database_url =
     For example: ecto://USER:PASS@HOST/DATABASE
     """
 
-IO.inspect("DATABASE_URL: #{database_url} [test.exs]")
-
 config :phoenix_starter, PhoenixStarter.Repo,
   url: database_url,
   show_sensitive_data_on_connection_error: true,

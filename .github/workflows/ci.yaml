@@ -150,7 +150,6 @@ jobs:
 
       - name: Run Tests
         run: |
-          echo DATABASE_URL in CI: $DATABASE_URL
           nix-shell shell.nix --run 'run test.migration'
           nix-shell shell.nix --run 'run test.ci'
         env:
