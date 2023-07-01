@@ -73,3 +73,4 @@ Following info can also be found by executing `help` in the terminal
   - `run deploy` which will deploy to fly.io
   - document lint setup, and remaining `run` commands.
 - Setup for spawning an IEX shell on production server
+- Document env setup (.env.dev in dev environtment, .env.test in test environment, .local files to override them)
