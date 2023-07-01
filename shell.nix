@@ -1,26 +1,33 @@
+# Import sources from `sources.nix` and packages from `nixpkgs`
 { sources ? import ./nix/sources.nix
 , pkgs ? import sources.nixpkgs { }
 }:
 
+# Bring all the packages from `pkgs` into scope
 with pkgs;
+
 let
+  # Inherit the `optional` and `optionals` functions from the `lib` package
   inherit (lib) optional optionals;
+
+  # Define a list of base packages that will be included in the shell
   basePackages = [
-    (import ./nix/default.nix { inherit pkgs; })
-    pkgs.niv
-    nixpkgs-fmt
-    fswatch
-    gcc
-    ack
+    beam.packages.erlangR25.elixir_1_14
+    pkgs.niv                                      # Include the `niv` package from `pkgs`
+    fswatch                                       # Include the `fswatch` package
+    gcc                                           # Include the `gcc` package
+    ack                                           # Include the `ack` package
   ];
 
+  # Define all the inputs for the shell, including base packages and additional packages based on the operating system
+  # On Linux, include `inotify-tools` for `mix test.watch` (hot reloading, etc)
   inputs = basePackages ++ lib.optionals stdenv.isLinux [ inotify-tools ]
     ++ lib.optionals stdenv.isDarwin
     (with darwin.apple_sdk.frameworks; [ CoreFoundation CoreServices ]);
 
-  # define shell startup command
+  # Define a multi-line string that contains shell commands to set up various environment variables
   hooks = ''
-    # this allows mix to work on the local directory
+    # this isolates mix to work only in local directory
     mkdir -p .nix-mix .nix-hex
     export MIX_HOME=$PWD/.nix-mix
     export HEX_HOME=$PWD/.nix-hex
@@ -41,16 +48,12 @@ let
   '';
 
 in
+# Create a shell with the specified inputs and shell hooks
 mkShell {
   buildInputs = inputs;
   shellHook = hooks;
 
-  ####################################################################
-  # Without  this, almost  everything  fails with  locale issues  when
-  # using `nix-shell --pure` (at least on NixOS).
-  # See
-  # + https://github.com/NixOS/nix/issues/318#issuecomment-52986702
-  # + http://lists.linuxfromscratch.org/pipermail/lfs-support/2004-June/023900.html
-  ####################################################################
+  # Set the `LOCALE_ARCHIVE` environment variable based on the operating system
+  # This is necessary to avoid locale issues when using `nix-shell --pure` on NixOS
   LOCALE_ARCHIVE = if pkgs.stdenv.isLinux then "${pkgs.glibcLocales}/lib/locale/locale-archive" else "";
 }
