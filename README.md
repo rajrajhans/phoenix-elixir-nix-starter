@@ -7,6 +7,7 @@ The existing phoenix project is generated using `mix phx.new` with Phoenix 1.7.2
 ## Features
 
 - Nix setup (using flakes)
+- Postgres & pgadmin setup (via Docker Compose)
 - Credo and Dialyzer setup
 - Livebook Setup
 - Multi env support (using [shdotenv](https://github.com/ko1nksm/shdotenv))
@@ -55,11 +56,12 @@ Following info can also be found by executing `help` in the terminal
 - `run server.iex` Run a remote IEx shell connected to the server. useful for debugging in IEX without logs getting in the way.
 - `run livebook` Run livebook
 - `run compile` Compile the project
-- `run dev.reset` Reset dev database
+- `run db` Start postgres and pgadmin
 - `run db.setup` Setup local db
 - `run db.migrate` Migrate local db
 - `run db.rollback` Rollback local db
 - `run db.create_migration <name>` Create new migration script
+- `run dev.reset` Reset dev database
 - `run test.reset` Reset test database
 - `run test` Run tests
 - `run test.watch` Run test in watch mode

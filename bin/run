@@ -23,7 +23,7 @@ run_compile() {
 
 run_server() {
   with_dev_env
-  iex --sname copilot --cookie copilot -S mix phx.server
+  iex --sname phoenix_starter --cookie phoenix_starter -S mix phx.server
 }
 
 run_server.iex() {
@@ -36,6 +36,10 @@ run_server.iex() {
 run_setup() {
   run deps
   run db.setup
+}
+
+run_db() {
+  docker-compose up
 }
 
 run_db.setup() {

@@ -40,6 +40,10 @@ printf "${CYAN}%-35s${NC}" "run dev.reset"
 printf "%s" "Reset dev database"
 echo -e "\n"
 
+printf "${CYAN}%-35s${NC}" "run db"
+printf "%s" "Start postgres & pgadmin"
+echo -e "\n"
+
 printf "${CYAN}%-35s${NC}" "run db.setup"
 printf "%s" "Setup local db"
 echo -e "\n"
@@ -58,6 +62,14 @@ echo -e "\n"
 
 printf "${CYAN}%-35s${NC}" "run server"
 printf "%s" "Run the server inside an IEx shell"
+echo -e "\n"
+
+printf "${CYAN}%-35s${NC}" "run server.iex"
+printf "%s" "Run a remote IEx shell connected to the server. useful for debugging in IEX without logs getting in the way."
+echo -e "\n"
+
+printf "${CYAN}%-35s${NC}" "run livebook"
+printf "%s" "Run livebook"
 echo -e "\n"
 
 printf "${CYAN}%-35s${NC}" "run test.reset"
