@@ -6,8 +6,10 @@ The existing phoenix project is generated using `mix phx.new` with Phoenix 1.7.2
 
 ## Features
 
-- Nix setup
+- Nix setup (using flakes)
+- Postgres & pgadmin setup (via Docker Compose)
 - Credo and Dialyzer setup
+- Livebook attached to the Phoenix app
 - Multi env support (using [shdotenv](https://github.com/ko1nksm/shdotenv))
 - `run` commands for common workflows
 - Github Actions setup for
@@ -51,12 +53,16 @@ Following info can also be found by executing `help` in the terminal
 - `run [command]` Run any command with dev env loaded
 - `run deps` Install dependencies
 - `run server` Run the server inside an IEx shell
+- `run server.iex` Run a remote IEx shell connected to the server. useful for debugging in IEX without logs getting in the way.
+- `run livebook.setup` Setup livebook
+- `run livebook` Run livebook
 - `run compile` Compile the project
-- `run dev.reset` Reset dev database
+- `run db` Start postgres and pgadmin
 - `run db.setup` Setup local db
 - `run db.migrate` Migrate local db
 - `run db.rollback` Rollback local db
 - `run db.create_migration <name>` Create new migration script
+- `run dev.reset` Reset dev database
 - `run test.reset` Reset test database
 - `run test` Run tests
 - `run test.watch` Run test in watch mode
@@ -68,7 +74,6 @@ Following info can also be found by executing `help` in the terminal
 
 ### Todos
 
-- move to nix flakes
 - run commands to be added
   - `run deploy` which will deploy to fly.io
   - document lint setup, and remaining `run` commands.
