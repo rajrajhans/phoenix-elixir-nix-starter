@@ -26,9 +26,11 @@ run_server() {
   iex --sname copilot --cookie copilot -S mix phx.server
 }
 
-run_iex() {
+run_server.iex() {
   with_dev_env
-  iex -S mix
+  # useful for debugging in IEX without logs getting in the way. just do `run server.iex` when you already have a server running.
+  # internally, this command just connects to the already-running server.x
+  iex --sname $APP_NAME"_remote_shell" --cookie $APP_NAME --remsh $APP_NAME@$(hostname | sed "s/.local//")
 }
 
 run_setup() {
@@ -129,7 +131,7 @@ run_clean() {
   rm -rf .elixir_ls/ _build/
 }
 
-run_delete.phx(){
+run_delete.phx() {
   rm -rf mix.exs mix.lock lib deps config assets _build test .formatter.exs priv
 }
 
