@@ -57,6 +57,8 @@ npm-debug.log
 .idea
 
 # dialyzer
-
 priv/plts/_.plt
 priv/plts/_.plt.hash
+
+# livebook
+.livebook/

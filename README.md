@@ -9,7 +9,7 @@ The existing phoenix project is generated using `mix phx.new` with Phoenix 1.7.2
 - Nix setup (using flakes)
 - Postgres & pgadmin setup (via Docker Compose)
 - Credo and Dialyzer setup
-- Livebook Setup
+- Livebook attached to the Phoenix app
 - Multi env support (using [shdotenv](https://github.com/ko1nksm/shdotenv))
 - `run` commands for common workflows
 - Github Actions setup for
@@ -54,6 +54,7 @@ Following info can also be found by executing `help` in the terminal
 - `run deps` Install dependencies
 - `run server` Run the server inside an IEx shell
 - `run server.iex` Run a remote IEx shell connected to the server. useful for debugging in IEX without logs getting in the way.
+- `run livebook.setup` Setup livebook
 - `run livebook` Run livebook
 - `run compile` Compile the project
 - `run db` Start postgres and pgadmin

@@ -43,7 +43,6 @@
           AppKit
           CoreVideo
           CoreAudio
-          AudioToolbox
         ]);
 
       in
@@ -52,15 +51,16 @@
           default = pkgs.mkShell {
             packages = with pkgs; all ++ linuxDeps ++ darwinDeps;
             shellHook = ''
-               # this isolates mix to work only in local directory
+              # this isolates mix to work only in local directory
               mkdir -p .nix-mix .nix-hex
               export MIX_HOME=$PWD/.nix-mix
               export HEX_HOME=$PWD/.nix-hex
 
               # make hex from Nixpkgs available
               # `mix local.hex` will install hex into MIX_HOME and should take precedence
-              export MIX_PATH="${beam.packages.erlangR25.hex}/lib/erlang/lib/hex/ebin"
-              export PATH=$MIX_HOME/bin:$HEX_HOME/bin:$PATH
+              export MIX_PATH="${pkgs.beam.packages.erlangR25.hex}/lib/erlang/lib/hex/ebin"
+              export PATH=${pkgs.erlangR25}/bin:$MIX_HOME/bin:$HEX_HOME/bin:$MIX_HOME/escripts:bin:$PATH
+
               export LANG=C.UTF-8
               export LC_CTYPE=en_US.UTF-8
               export LC_ALL=en_US.UTF-8
@@ -68,7 +68,6 @@
               # keep your shell history in iex
               export ERL_AFLAGS="-kernel shell_history enabled"
 
-              export PATH=bin:$PATH
               export MIX_ENV=dev
             '';
           };
