@@ -23,7 +23,7 @@ run_compile() {
 
 run_server() {
   with_dev_env
-  iex --sname phoenix_starter --cookie phoenix_starter -S mix phx.server
+  iex --sname $APP_NAME --cookie $APP_NAME -S mix phx.server
 }
 
 run_server.iex() {
@@ -148,11 +148,13 @@ run_release() {
 }
 
 run_livebook.setup() {
+  with_dev_env
   mix escript.install hex livebook 0.9.2 --force
   mkdir -p $(pwd)/.livebook
 }
 
 run_livebook() {
+  with_dev_env
   export LIVEBOOK_HOME=$(pwd)/livebooks
   export LIVEBOOK_DATA_PATH=$(pwd)/.livebook
   export LIVEBOOK_TOKEN_ENABLED=false

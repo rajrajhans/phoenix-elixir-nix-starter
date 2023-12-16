@@ -1,10 +1,13 @@
 name: "CI"
 
-on:
-  push:
-    branches: [main]
-  pull_request:
-    branches: [develop, main]
+# disable ci until nix flakes is integrated in actions
+# on:
+#   push:
+#     branches: [main]
+#   pull_request:
+#     branches: [develop, main]
+
+on: workflow_dispatch
 
 env:
   MIX_ENV: test
