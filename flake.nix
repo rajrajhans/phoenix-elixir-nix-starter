@@ -21,7 +21,7 @@
           pkgs.cmake
           pkgs.openssl
           pkgs.flyctl
-          pkgs.beam.packages.erlangR25.elixir_1_14
+          pkgs.beam.packages.erlang_27.elixir_1_17
         ];
 
         dev =
@@ -59,8 +59,8 @@
 
               # make hex from Nixpkgs available
               # `mix local.hex` will install hex into MIX_HOME and should take precedence
-              export MIX_PATH="${pkgs.beam.packages.erlangR25.hex}/lib/erlang/lib/hex/ebin"
-              export PATH=${pkgs.erlangR25}/bin:$MIX_HOME/bin:$HEX_HOME/bin:$MIX_HOME/escripts:bin:$PATH
+              export MIX_PATH="${pkgs.beam.packages.erlang_27.hex}/lib/erlang/lib/hex/ebin"
+              export PATH=${pkgs.erlang_27}/bin:$MIX_HOME/bin:$HEX_HOME/bin:$MIX_HOME/escripts:bin:$PATH
 
               export LANG=C.UTF-8
               export LC_CTYPE=en_US.UTF-8
