@@ -20,6 +20,7 @@
           pkgs.clang_13
           pkgs.cmake
           pkgs.openssl
+          pkgs.flyctl
           pkgs.beam.packages.erlangR25.elixir_1_14
         ];
 
