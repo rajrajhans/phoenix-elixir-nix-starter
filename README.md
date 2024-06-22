@@ -2,7 +2,7 @@
 
 The idea is to have a ready to go phoenix project setup with Nix, along with some extra bells and whistles (see [Features](#features)).
 
-The existing phoenix project is generated using `mix phx.new` with Phoenix 1.7.2, but it is easy (execute `run delete.phx`) to rip out all the phoenix related files and start from scratch with a new `mix phx.new` command as needed.
+The existing phoenix project is generated using `mix phx.new` with Phoenix 1.7.14, but it is easy (execute `run delete.phx`) to rip out all the phoenix related files and start from scratch with a new `mix phx.new` command as needed.
 
 ## Features
 
@@ -15,7 +15,7 @@ The existing phoenix project is generated using `mix phx.new` with Phoenix 1.7.2
 - Github Actions setup for
   - running build & tests in CI (with nix cache & postgres support)
   - running lint (credo) and dialyzer in CI
-  - deploying to fly.io (currently setup to deploy on manual trigger)
+  - deploying to fly.io via gh actions or via terminal (currently setup to deploy on manual trigger)
 - VSCode Tasks for running tests.
 
 ## Setting Up
@@ -79,3 +79,15 @@ Following info can also be found by executing `help` in the terminal
   - document lint setup, and remaining `run` commands.
 - Setup for spawning an IEX shell on production server
 - Document env setup (.env.dev in dev environtment, .env.test in test environment, .local files to override them)
+
+### Deploying to fly
+
+**Option 1: via terminal**
+
+- `flake.nix` has `flyctl`.
+- `flyctl auth login`
+- `fly launch`
+
+**Option 2: via GH Actions**
+
+- todo: add docs
