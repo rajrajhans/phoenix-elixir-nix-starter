@@ -30,7 +30,7 @@ run_server.iex() {
   with_dev_env
   # useful for debugging in IEX without logs getting in the way. just do `run server.iex` when you already have a server running.
   # internally, this command just connects to the already-running server.x
-  iex --sname $APP_NAME"_remote_shell" --cookie $APP_NAME --remsh $APP_NAME@$(hostname | sed "s/.local//")
+  iex --sname $APP_NAME"_remote_shell" --cookie $APP_NAME --remsh $APP_NAME@$(hostname)
 }
 
 run_setup() {
@@ -149,7 +149,7 @@ run_release() {
 
 run_livebook.setup() {
   with_dev_env
-  mix escript.install hex livebook 0.9.2 --force
+  mix escript.install hex livebook 0.13.2 --force
   mkdir -p $(pwd)/.livebook
 }
 
@@ -159,7 +159,7 @@ run_livebook() {
   export LIVEBOOK_DATA_PATH=$(pwd)/.livebook
   export LIVEBOOK_TOKEN_ENABLED=false
   export LIVEBOOK_COOKIE=$APP_NAME
-  export LIVEBOOK_DEFAULT_RUNTIME="attached:$APP_NAME@$(hostname | sed "s/.local//"):$APP_NAME"
+  export LIVEBOOK_DEFAULT_RUNTIME="attached:$APP_NAME@$(hostname):$APP_NAME"
 
   if [[ $(uname) == "Darwin" ]] && [[ $(uname -m) == 'arm64' ]]; then
     export EXLA_FLAGS=--config=macos_arm64
