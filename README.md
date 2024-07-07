@@ -87,6 +87,8 @@ Following info can also be found by executing `help` in the terminal
 - `flake.nix` has `flyctl`.
 - `flyctl auth login`
 - `fly launch`
+- `fly secrets set` / `cat .env.prod.local | fly secrets import`
+- `fly deploy`
 
 **Option 2: via GH Actions**
 
