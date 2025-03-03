@@ -21,7 +21,7 @@
           pkgs.cmake
           pkgs.openssl
           pkgs.flyctl
-          pkgs.beam.packages.erlang_27.elixir_1_17
+          pkgs.beam.packages.erlang_27.elixir_1_18
         ];
 
         dev =
