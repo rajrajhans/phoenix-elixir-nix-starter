@@ -23,14 +23,14 @@ run_compile() {
 
 run_server() {
   with_dev_env
-  iex --sname $APP_NAME --cookie $APP_NAME -S mix phx.server
+  iex --name $APP_NAME --cookie $APP_NAME -S mix phx.server
 }
 
 run_server.iex() {
   with_dev_env
   # useful for debugging in IEX without logs getting in the way. just do `run server.iex` when you already have a server running.
   # internally, this command just connects to the already-running server.x
-  iex --sname $APP_NAME"_remote_shell" --cookie $APP_NAME --remsh $APP_NAME@$(hostname)
+  iex --name $APP_NAME"_remote_shell" --cookie $APP_NAME --remsh $APP_NAME@$(hostname)
 }
 
 run_setup() {
@@ -149,7 +149,7 @@ run_release() {
 
 run_livebook.setup() {
   with_dev_env
-  mix escript.install hex livebook 0.13.2 --force
+  mix escript.install hex livebook 0.14.5 --force
   mkdir -p $(pwd)/.livebook
 }
 
