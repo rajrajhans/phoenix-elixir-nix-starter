@@ -8,18 +8,12 @@ defmodule PhoenixStarter.Application do
   @impl true
   def start(_type, _args) do
     children = [
-      # Start the Telemetry supervisor
       PhoenixStarterWeb.Telemetry,
-      # Start the Ecto repository
       PhoenixStarter.Repo,
-      # Start the PubSub system
+      {DNSCluster, query: Application.get_env(:phoenix_starter, :dns_cluster_query) || :ignore},
       {Phoenix.PubSub, name: PhoenixStarter.PubSub},
-      # Start Finch
       {Finch, name: PhoenixStarter.Finch},
-      # Start the Endpoint (http/https)
       PhoenixStarterWeb.Endpoint
-      # Start a worker by calling: PhoenixStarter.Worker.start_link(arg)
-      # {PhoenixStarter.Worker, arg}
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
