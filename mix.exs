@@ -45,19 +45,19 @@ defmodule PhoenixStarter.MixProject do
       {:floki, ">= 0.36.0", only: :test},
       {:phoenix_live_dashboard, "~> 0.8.4"},
       {:esbuild, "~> 0.9", runtime: Mix.env() == :dev},
-      {:tailwind, "~> 0.2.4", runtime: Mix.env() == :dev},
+      {:tailwind, "~> 0.4.0", runtime: Mix.env() == :dev},
       {:swoosh, "~> 1.17"},
       {:finch, "~> 0.19"},
       {:telemetry_metrics, "~> 1.0"},
       {:telemetry_poller, "~> 1.1"},
-      {:gettext, "~> 0.26"},
+      {:gettext, "~> 1.0"},
       {:jason, "~> 1.4"},
       {:bandit, "~> 1.6"},
-      {:dns_cluster, "~> 0.1.1"},
+      {:dns_cluster, "~> 0.2.0"},
 
       # Livebook
       {:kino, "~> 0.14", only: :dev},
-      {:kino_db, "~> 0.2.9", only: :dev},
+      {:kino_db, "~> 0.4.0", only: :dev},
       {:vega_lite, "~> 0.1.9", only: :dev},
       {:kino_vega_lite, "~> 0.1.13", only: :dev},
 
