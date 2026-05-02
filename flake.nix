@@ -16,13 +16,11 @@
         };
 
         common = [
-          pkgs.gcc12
-          pkgs.clang_13
+          pkgs.gcc14
           pkgs.cmake
           pkgs.openssl
           pkgs.flyctl
           pkgs.beam.packages.erlang_27.elixir_1_18
-          pkgs.ack
         ];
 
         dev =
